@@ -1,0 +1,139 @@
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LINE Connect — Demo</title>
+  <style>
+    :root { --muted:#64748b; --grad1:#2F6BFF; --grad2:#7A3BFF; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial; color:#0f172a; background:#f8fafc; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    header { position: sticky; top:0; z-index:10; backdrop-filter: blur(6px); background: rgba(255,255,255,.85); border-bottom: 1px solid #e2e8f0; }
+    .row { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand svg { filter: drop-shadow(0 2px 6px rgba(41,94,255,.2)); }
+    h1 { font-size: clamp(28px, 3.8vw, 44px); margin: 0; line-height:1.15; }
+    p.lead { font-size: 18px; color: var(--muted); margin-top: 10px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border-radius: 14px; border: 1px solid #e2e8f0; text-decoration:none; font-weight:600; }
+    .btn.primary { background: linear-gradient(90deg, var(--grad1), var(--grad2)); color: #fff; border:none; }
+    .btn.ghost { background:#fff; color:#0f172a; }
+    .grid { display:grid; gap:24px; }
+    @media(min-width: 900px){ .hero { grid-template-columns: 1.2fr 1fr; } }
+    .phone { aspect-ratio: 9/19; border:1px solid #e2e8f0; background:#fff; padding:16px; border-radius:26px; box-shadow: 0 10px 30px rgba(2,6,23,.08); display:flex; flex-direction:column; }
+    .pill { height: 24px; width: 96px; background:#e2e8f0; border-radius:999px; align-self:center; }
+    .muted { color: var(--muted); font-size:12px; margin-top: 6px; }
+    .title { font-weight: 800; letter-spacing:-.02em; font-size: 22px; }
+    .card { border:1px solid #e2e8f0; border-radius:18px; background:#fff; padding:24px; }
+    .footer { text-align:center; color:#64748b; font-size: 14px; padding: 32px; border-top:1px solid #e2e8f0; margin-top: 40px;}
+    ul.bullets{ display:grid; grid-template-columns: 1fr; gap:8px; padding:0; margin:18px 0 0; list-style:none;}
+    @media(min-width:700px){ ul.bullets{ grid-template-columns: 1fr 1fr; } }
+    .input{ width:100%; padding:12px 14px; border:1px solid #e2e8f0; border-radius:10px; font-size:14px;}
+    .textarea{ width:100%; min-height:100px; padding:12px 14px; border:1px solid #e2e8f0; border-radius:10px; font-size:14px;}
+    .small{ font-size:12px; color:#64748b; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="row">
+        <div class="brand">
+          <svg width="36" height="36" viewBox="0 0 100 100">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0%" stop-color="#2F6BFF"/>
+                <stop offset="100%" stop-color="#7A3BFF"/>
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="46" fill="none" stroke="url(#g)" stroke-width="8"/>
+            <path d="M35 50c0-10 8-18 18-18h7" stroke="url(#g)" stroke-width="8" fill="none" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <div style="font-weight:900; letter-spacing:-.02em">LINE <span style="background:linear-gradient(90deg,#2F6BFF,#7A3BFF); -webkit-background-clip:text; color:transparent;">CONNECT</span></div>
+            <div class="small">Conectando negócios ao digital</div>
+          </div>
+        </div>
+        <a href="#lead" class="btn primary">Quero meu app</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid hero" style="margin: 40px 0 20px">
+      <div>
+        <h1>App + Agente de IA para transformar cliques em <span style="background:linear-gradient(90deg,#2F6BFF,#7A3BFF); -webkit-background-clip:text; color:transparent;">chamados reais</span>.</h1>
+        <p class="lead">Mostre um app próprio e um agente 24h — ideal para quem já anuncia e quer converter mais.</p>
+        <div style="display:flex; gap:12px; margin-top:16px">
+          <a href="#demo" class="btn primary">Ver demo</a>
+          <a href="#lead" class="btn ghost">Quero um orçamento</a>
+        </div>
+        <ul class="bullets">
+          <li>✅ Geolocalização e pedido em 1 toque</li>
+          <li>✅ Agente virtual 24h no WhatsApp</li>
+          <li>✅ Integração com equipe de plantão</li>
+          <li>✅ Entrega rápida e manutenção simples</li>
+        </ul>
+      </div>
+      <div class="grid" id="demo">
+        <div class="phone">
+          <div class="pill"></div>
+          <div class="muted">App do Cliente</div>
+          <div class="title">Solicitar Guincho</div>
+          <div style="margin-top:auto; display:grid; gap:8px;">
+            <a href="#lead" class="btn primary" style="justify-content:center; padding:16px; border-radius:16px">Solicitar serviço</a>
+            <div class="small" style="text-align:center">Tela ilustrativa</div>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="pill"></div>
+          <div class="muted">Agente RF</div>
+          <div class="title">Olá! Envie sua localização e o problema do veículo.</div>
+          <div style="margin-top:auto; display:grid; gap:8px;">
+            <div class="card small">“Para agilizar o atendimento, toque no botão abaixo e compartilhe sua localização atual.”</div>
+            <div class="small" style="text-align:center">Tela ilustrativa</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="font-size:24px; margin-bottom:12px">Como funciona</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit,minmax(240px,1fr));">
+        <div class="card"><strong>1. Clique no anúncio</strong><br/><span class="small">Seu cliente vê o anúncio e acessa o app/landing da sua empresa.</span></div>
+        <div class="card"><strong>2. Pede serviço em 1 toque</strong><br/><span class="small">No app, escolhe o serviço e envia localização automaticamente.</span></div>
+        <div class="card"><strong>3. Agente de IA atende</strong><br/><span class="small">O agente confirma dados e alerta sua equipe no WhatsApp/E-mail.</span></div>
+      </div>
+    </section>
+
+    <section id="lead" style="margin: 36px 0 0">
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:24px;">
+        <div>
+          <h3 style="font-size:22px; margin:0 0 8px">Vamos criar seu app e agente?</h3>
+          <p class="small">Preencha os dados e retornamos com um protótipo e orçamento. Também podemos falar por WhatsApp.</p>
+          <a class="btn primary" target="_blank" href="https://wa.me/5599999999999?text=Quero%20saber%20sobre%20o%20LINE%20Connect" style="margin-top:10px; display:inline-flex;">Falar no WhatsApp</a>
+          <p class="small">Troque o número no link acima pelo WhatsApp comercial.</p>
+        </div>
+        <form class="card" onsubmit="event.preventDefault(); document.getElementById('ok').style.display='block';">
+          <input class="input" placeholder="Nome" required>
+          <div style="height:10px"></div>
+          <input class="input" placeholder="Empresa" required>
+          <div style="height:10px"></div>
+          <input type="email" class="input" placeholder="E-mail" required>
+          <div style="height:10px"></div>
+          <input class="input" placeholder="WhatsApp" required>
+          <div style="height:10px"></div>
+          <textarea class="textarea" placeholder="Descreva seu serviço (ex.: guincho 24h, oficina, clínica)"></textarea>
+          <div style="height:12px"></div>
+          <button class="btn primary" type="submit">Solicitar protótipo</button>
+          <p class="small">* Formulário demonstrativo — conecte em Formspree, Zapier ou Make.</p>
+          <div id="ok" class="card" style="display:none; margin-top:8px; text-align:center;">🎉 Recebido! Em breve entraremos em contato.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer">© <span id="y"></span> LINE Connect — Conectando negócios ao digital.</div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</body>
+</html>
